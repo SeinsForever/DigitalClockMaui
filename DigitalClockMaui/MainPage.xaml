@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:DigitalClockMaui"
+             x:DataType="viewmodel:MainViewModel"
+             x:Class="DigitalClockMaui.MainPage">
+
+    <ContentPage.Resources>
+        <Style x:Key="VerticalLine1"
+               TargetType="Rectangle"
+               x:DataType="viewmodel:DigitItem">
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="WidthRequest" Value="5"></Setter>
+            <Setter Property="HeightRequest" Value="30"></Setter>
+            <Setter Property="IsVisible" Value="True"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="0">
+                    <Setter Property="Fill" Value="Yellow" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="4">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="5">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="6">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="8">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="9">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDot}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="Fill" Value="black" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="VerticalLine2"
+               TargetType="Rectangle"
+               x:DataType="viewmodel:DigitItem">
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="WidthRequest" Value="5"></Setter>
+            <Setter Property="HeightRequest" Value="30"></Setter>
+            <Setter Property="IsVisible" Value="True"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="0">
+                    <Setter Property="Fill" Value="Yellow" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="2">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="6">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="8">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDot}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="Fill" Value="black" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="VerticalLine3"
+               TargetType="Rectangle"
+               x:DataType="viewmodel:DigitItem">
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="WidthRequest" Value="5"></Setter>
+            <Setter Property="HeightRequest" Value="30"></Setter>
+            <Setter Property="IsVisible" Value="True"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="0">
+                    <Setter Property="Fill" Value="Yellow" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="1">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="2">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="3">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="4">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="7">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="8">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="9">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDot}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="Fill" Value="black" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="VerticalLine4"
+               TargetType="Rectangle"
+               x:DataType="viewmodel:DigitItem">
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="WidthRequest" Value="5"></Setter>
+            <Setter Property="HeightRequest" Value="30"></Setter>
+            <Setter Property="IsVisible" Value="True"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="0">
+                    <Setter Property="Fill" Value="Yellow" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="1">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="3">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="4">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="5">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="6">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="7">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="8">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="9">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDot}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="Fill" Value="black" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+
+        <Style x:Key="HorizontalLine1"
+               TargetType="Rectangle"
+               x:DataType="viewmodel:DigitItem">
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="WidthRequest" Value="30"></Setter>
+            <Setter Property="HeightRequest" Value="5"></Setter>
+            <Setter Property="IsVisible" Value="True"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="0">
+                    <Setter Property="Fill" Value="Yellow" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="2">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="3">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="5">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="6">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="7">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="8">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="9">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDot}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="Fill" Value="black" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="HorizontalLine2"
+               TargetType="Rectangle"
+               x:DataType="viewmodel:DigitItem">
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="WidthRequest" Value="30"></Setter>
+            <Setter Property="HeightRequest" Value="5"></Setter>
+            <Setter Property="IsVisible" Value="True"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="2">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="3">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="4">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="5">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="5">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="6">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="8">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="9">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDot}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="Fill" Value="black" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="HorizontalLine3"
+               TargetType="Rectangle"
+               x:DataType="viewmodel:DigitItem">
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="WidthRequest" Value="30"></Setter>
+            <Setter Property="HeightRequest" Value="5"></Setter>
+            <Setter Property="IsVisible" Value="True"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="0">
+                    <Setter Property="Fill" Value="Yellow" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="2">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="3">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="5">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="6">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="8">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Digit}"
+                             TargetType="Rectangle"
+                             Value="9">
+                    <Setter Property="Fill" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDot}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="Fill" Value="black" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <Style  x:Key="Dot"
+                TargetType="Rectangle"
+                x:DataType="viewmodel:DigitItem">
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="WidthRequest" Value="5"></Setter>
+            <Setter Property="HeightRequest" Value="5"></Setter>
+            <Setter Property="RadiusX" Value="10"></Setter>
+            <Setter Property="RadiusY" Value="10"></Setter>
+            <Setter Property="IsVisible" Value="False"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsDot}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="IsVisible" Value="True" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding DotState}"
+                             TargetType="Rectangle"
+                             Value="true">
+                    <Setter Property="Fill" Value="red" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
+
+
+    <HorizontalStackLayout
+        Spacing="25"
+        Padding="30,0"
+        VerticalOptions="Center"
+        BackgroundColor="Black">
+        
+        <Button
+               Text="Click me!"
+               HorizontalOptions="Center"
+               BackgroundColor="LightGray"
+               TextColor="Black"
+               WidthRequest="300"
+               HeightRequest="300"
+               IsEnabled="{Binding IsNotBusy}"
+               Command="{Binding ClickCommand}"/>
+
+        <CollectionView ItemsSource="{Binding DigitList}"
+                        SelectionMode="None"
+                        ItemsLayout="HorizontalList"
+                        >
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type x:Object}">
+                    <HorizontalStackLayout Padding="10"
+                                    x:DataType="viewmodel:MainViewModel">
+                        <StackLayout
+                            Spacing="5"
+                            Padding="0,5">
+                            <Rectangle
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource VerticalLine1}">
+                            </Rectangle>
+                            <Rectangle
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource VerticalLine2}">
+                            </Rectangle>
+                        </StackLayout>
+                        <StackLayout
+                            Spacing="30">
+                            <Rectangle
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource HorizontalLine1}">
+                            </Rectangle>
+                            <Rectangle
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource Dot}">
+                            </Rectangle>
+                            <Rectangle
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource Dot}">
+                            </Rectangle>
+                            <Rectangle
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource HorizontalLine2}">
+                            </Rectangle>
+                            <Rectangle
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource HorizontalLine3}">
+                            </Rectangle>
+
+
+
+                        </StackLayout>
+                        <StackLayout
+                            Spacing="5"
+                            Padding="0,5">
+                            <Rectangle
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource VerticalLine3}">
+                            </Rectangle>
+                            <Rectangle
+                                x:Name="Sec"
+                                x:DataType="viewmodel:DigitItem"
+                                Style="{StaticResource VerticalLine4}">
+                            </Rectangle>
+                        </StackLayout>
+
+
+
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </HorizontalStackLayout>
+
+
+       
+
+</ContentPage>
